@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CB3A31</color>
+    <color name="colorPrimaryDark">#CB3A31</color>
+    <color name="colorAccent">#CB3A31</color>
+
+    <!--  Content Color  -->
+    <color name="textColorHead">#263238</color>
+    <color name="textColorBody80">#515B60</color>
+    <color name="textColorHint">#A8ADAF</color>
+    <color name="textColorBlack">#263238</color>
+    <color name="textColorGray">#98A2B3</color>
+
+    <color name="backgroundSearch">#40D2DFEE</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorLine">#E9EEF3</color>
+    <color name="colorSpaceLine">#F9FAFB</color>
+    <color name="rippleDefault">#D3DCE6</color>
+    <color name="rippleSecondary">#F0F6FD</color>
+    <color name="colorImageDefault">#D3DCE6</color>
+    <color name="colorImageSecondary">#E4E7EC</color>
+    <color name="colorImageSolid">#C4C9CB</color>
+
+    <color name="primaryTransparent">#1ACB3A31</color>
+    <color name="colorButtonPrimary">#CB3A31</color>
+    <color name="colorPrimaryPressed">#BD251C</color>
+
+    <color name="green">#43936C</color>
+    <color name="greenTransparent">#1A43936C</color>
+    <color name="blue">#3267E3</color>
+    <color name="blueTransparent">#1A3267E3</color>
+    <color name="yellow">#FFB020</color>
+    <color name="yellowTransparent">#1AFFB020</color>
+
+    <color name="backgroundSnackBarSuccess">#D6F4E3</color>
+    <color name="colorSnackBarSuccess">#359B89</color>
+    <color name="backgroundSnackBarError">#E4E7EC</color>
+    <color name="colorSnackBarError">#475467</color>
+    <color name="backgroundSnackBarWarning">#FDF3D0</color>
+    <color name="colorSnackBarWarning">#D5A345</color>
+</resources>

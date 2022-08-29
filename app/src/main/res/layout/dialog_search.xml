@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 ~ Irfanul Haq.
+  -->
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="thisFragment"
+            type="com.muchi.newsapp.ui.search.DialogSearch"/>
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16dp"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:layout_marginEnd="@dimen/_16dp">
+                <RelativeLayout
+                    android:id="@+id/laySearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/_12dp"
+                    android:paddingEnd="@dimen/_12dp"
+                    android:layout_toStartOf="@+id/cancel"
+                    android:background="@drawable/bg_search"
+                    tools:ignore="UseCompoundDrawables">
+                    <ImageView
+                        android:id="@+id/icSearch"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:src="@drawable/ic_search"
+                        tools:ignore="ContentDescription"
+                        android:layout_centerVertical="true" />
+
+                    <EditText
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@color/textColorBlack"
+                        android:textSize="@dimen/_14sp"
+                        android:fontFamily="@font/dm_sans_regular"
+                        android:textColorHint="@color/textColorHint"
+                        android:maxLines="1"
+                        android:imeOptions="actionSearch"
+                        android:inputType="textFilter"
+                        android:background="@color/transparent"
+                        android:layout_marginStart="@dimen/_10dp"
+                        android:layout_marginEnd="@dimen/_10dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/icSearch"
+                        android:layout_toStartOf="@+id/icClear"
+                        tools:ignore="Autofill,LabelFor" />
+
+                    <ImageView
+                        android:id="@+id/icClear"
+                        android:layout_width="@dimen/_20dp"
+                        android:layout_height="@dimen/_20dp"
+                        android:src="@drawable/ic_search_clear"
+                        tools:ignore="ContentDescription"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:onClick="@{() -> thisFragment.clearKeyword()}"
+                        android:visibility="gone"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40dp"
+                    android:textColor="@color/textColorGray"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_14sp"
+                    android:fontFamily="@font/dm_sans_medium"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_10dp"
+                    android:onClick="@{() -> thisFragment.onDismiss()}"
+                    android:text="@string/cancel" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginBottom="@dimen/_8dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rbSource"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/source"
+                    android:textSize="@dimen/_14sp"
+                    android:paddingStart="@dimen/_8dp"
+                    android:paddingEnd="@dimen/_8dp"
+                    android:fontFamily="@font/dm_sans_medium"
+                    android:textColor="@color/textColorBlack"
+                    android:layout_marginEnd="@dimen/_12dp"
+                    android:buttonTint="@drawable/radio_button_color"/>
+
+                <RadioButton
+                    android:id="@+id/rbArticle"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/article"
+                    android:textSize="@dimen/_14sp"
+                    android:paddingStart="@dimen/_8dp"
+                    android:paddingEnd="@dimen/_8dp"
+                    android:fontFamily="@font/dm_sans_medium"
+                    android:textColor="@color/textColorBlack"
+                    android:layout_marginStart="@dimen/_12dp"
+                    android:buttonTint="@drawable/radio_button_color"/>
+            </RadioGroup>
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/colorLine"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="5"
+                tools:listitem="@layout/item_source"
+                android:scrollbars="none"
+                android:overScrollMode="never"
+                android:orientation="vertical"
+                app:spanCount="5"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:paddingStart="@dimen/_11dp"
+                android:paddingEnd="@dimen/_11dp"/>
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

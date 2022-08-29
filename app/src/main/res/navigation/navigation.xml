@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 - Irfanul Haq.
+  -->
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.muchi.newsapp.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_to_article"
+            app:destination="@id/articleFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.muchi.newsapp.ui.article.ArticleFragment"
+        android:label="ArticleFragment"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="data"
+            app:argType="com.muchi.newsapp.data.cache.room.source.SourceEntity" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_to_webview"
+        app:destination="@id/webviewFragment"/>
+
+    <fragment
+        android:id="@+id/webviewFragment"
+        android:name="com.muchi.newsapp.ui.webview.WebviewFragment"
+        android:label="WebviewFragment"
+        tools:layout="@layout/fragment_webview">
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 ~ Muchi (Irfanul Haq).
+  -->
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="thisFragment"
+            type="com.muchi.newsapp.ui.webview.WebviewFragment"/>
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40dp"
+                android:layout_marginTop="@dimen/_12dp"
+                android:layout_marginBottom="@dimen/_6dp"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginStart="@dimen/_11dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+                <ImageView
+                    android:id="@+id/imageNav"
+                    android:layout_width="@dimen/_32dp"
+                    android:layout_height="@dimen/_32dp"
+                    android:padding="@dimen/_3dp"
+                    android:src="@drawable/ic_back"
+                    android:background="@drawable/ripple_transparent_circle"
+                    android:onClick="@{() -> thisFragment.onBack()}"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:textSize="@dimen/_16sp"
+                    android:textColor="@color/textColorBlack"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/article"
+                    android:layout_marginStart="@dimen/_11dp"/>
+            </LinearLayout>
+
+            <com.muchi.newsapp.utils.ObservableWebView
+                android:id="@+id/webView"
+                android:layout_below="@+id/layToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+            <View
+                android:id="@+id/viewLine"
+                android:layout_below="@+id/layToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1dp"
+                android:background="@color/colorLine"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

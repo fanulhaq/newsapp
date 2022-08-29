@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 ~ Muchi (Irfanul Haq).
+  -->
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/firstView"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="@dimen/_14dp"
+            android:visibility="gone"
+            android:background="@color/transparent"/>
+
+        <LinearLayout
+            android:id="@+id/layContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_item_shadow"
+            android:layout_marginBottom="@dimen/_2dp"
+            android:layout_marginTop="@dimen/_2dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/_12dp"
+                android:paddingBottom="@dimen/_12dp"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingEnd="@dimen/_16dp">
+                <TextView
+                    android:id="@+id/category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_regular"
+                    android:textSize="@dimen/_12sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingStart="@dimen/_8dp"
+                    android:paddingEnd="@dimen/_8dp"
+                    android:paddingTop="@dimen/_4dp"
+                    android:paddingBottom="@dimen/_4dp"
+                    android:background="@drawable/bg_primary_transparent"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_medium"
+                    android:textSize="@dimen/_14sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginTop="@dimen/_8dp"
+                    android:textColor="@color/textColorBlack"/>
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans_regular"
+                    android:textSize="@dimen/_12sp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/textColorGray"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/lastView"
+            android:layout_width="@dimen/_1dp"
+            android:layout_height="@dimen/_14dp"
+            android:visibility="gone"
+            android:background="@color/transparent"/>
+    </LinearLayout>
+</layout>

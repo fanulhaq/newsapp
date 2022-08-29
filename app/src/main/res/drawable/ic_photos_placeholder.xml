@@ -1,0 +1,20 @@
+<!--
+  ~ Copyright (c) 2022 - Irfanul Haq.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+  <path
+      android:pathData="M0,0h120v120h-120z"
+      android:fillColor="#F9FAFB"/>
+  <path
+      android:pathData="M44,68L53.172,58.828C54.734,57.266 57.266,57.266 58.828,58.828L68,68M64,64L67.172,60.828C68.734,59.266 71.266,59.266 72.828,60.828L76,64M64,52H64.02M48,76H72C74.209,76 76,74.209 76,72V48C76,45.791 74.209,44 72,44H48C45.791,44 44,45.791 44,48V72C44,74.209 45.791,76 48,76Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="2"
+      android:fillColor="#00000000"
+      android:strokeColor="#E4E7EC"
+      android:strokeLineCap="round"/>
+</vector>

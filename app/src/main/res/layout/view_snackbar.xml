@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022 - Irfanul Haq.
+  -->
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10dp"
+            app:cardCornerRadius="@dimen/_10dp"
+            android:layout_centerHorizontal="true"
+            app:cardBackgroundColor="@color/backgroundSnackBarSuccess"
+            app:strokeWidth="@dimen/_1dp"
+            app:strokeColor="@color/colorSnackBarSuccess"
+            app:cardElevation="2dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_12dp"
+                android:paddingEnd="@dimen/_12dp"
+                android:paddingTop="@dimen/_10dp"
+                android:paddingBottom="@dimen/_10dp">
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/_16dp"
+                    android:layout_height="@dimen/_16dp"
+                    android:layout_centerVertical="true"
+                    app:tint="@color/colorSnackBarSuccess"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tvMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSnackBarSuccess"
+                    android:textSize="@dimen/_12sp"
+                    android:fontFamily="@font/dm_sans_medium"
+                    android:layout_toEndOf="@+id/imageView"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>

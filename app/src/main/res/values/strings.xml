@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+
+    <string name="search_news_sources">Search News Sources</string>
+    <string name="search_news_articles">Search News Articles</string>
+    <string name="article">Article</string>
+    <string name="source">Source</string>
+    <string name="cancel">Cancel</string>
+</resources>
