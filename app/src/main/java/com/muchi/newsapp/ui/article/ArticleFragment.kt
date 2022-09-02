@@ -76,8 +76,8 @@ class ArticleFragment : BaseFragment<FragmentArticleBinding>(R.layout.fragment_a
                     imageView.isVisible = false
                 }
                 is Resource.Success -> {
-                    if(state.data.isNullOrEmpty()) {
-                        if(state.finishLoading && articleAdapter.items.isNullOrEmpty()) {
+                    if(state.data.isEmpty()) {
+                        if(state.finishLoading && articleAdapter.items.isEmpty()) {
                             imageView.isVisible = true
                         }
                     } else {
@@ -93,7 +93,7 @@ class ArticleFragment : BaseFragment<FragmentArticleBinding>(R.layout.fragment_a
                 is Resource.Error -> {
                     swipeRefresh.isRefreshing = false
                     swipeRefresh.isEnabled = true
-                    if(articleAdapter.items.isNullOrEmpty()) imageView.isVisible = true
+                    if(articleAdapter.items.isEmpty()) imageView.isVisible = true
                     context?.snackBarError(layoutInflater = layoutInflater, v = root, message = state.message)
                 }
             }

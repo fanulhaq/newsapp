@@ -11,7 +11,7 @@ import android.webkit.WebView
 
 class ObservableWebView : WebView {
 
-    var onScrollChanged: OnScrollChangedCallback? = null
+    private var onScrollChanged: OnScrollChangedCallback? = null
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)

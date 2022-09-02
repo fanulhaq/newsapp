@@ -126,8 +126,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main), 
                     imageView.isVisible = false
                 }
                 is Resource.Success -> {
-                    if(state.data.isNullOrEmpty()) {
-                        if(state.finishLoading && sourceAdapter.items.isNullOrEmpty()) {
+                    if(state.data.isEmpty()) {
+                        if(state.finishLoading && sourceAdapter.items.isEmpty()) {
                             imageView.isVisible = true
                         }
                     } else {
@@ -143,7 +143,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main), 
                 is Resource.Error -> {
                     swipeRefresh.isRefreshing = false
                     swipeRefresh.isEnabled = true
-                    if(sourceAdapter.items.isNullOrEmpty()) imageView.isVisible = true
+                    if(sourceAdapter.items.isEmpty()) imageView.isVisible = true
                     context?.snackBarError(layoutInflater = layoutInflater, v = root, message = state.message)
                 }
             }

@@ -184,7 +184,7 @@ class DialogSearch : BottomSheetDialogFragment(), ArticleListener, SourceListene
                     sourceAdapter.clearAdapter()
                 }
                 is Resource.Success -> {
-                    if(state.data.isNullOrEmpty()) {
+                    if(state.data.isEmpty()) {
                         if(state.finishLoading) {
                             dialog?.window?.decorView?.let {
                                 context?.snackBarWarning(
@@ -271,7 +271,7 @@ class DialogSearch : BottomSheetDialogFragment(), ArticleListener, SourceListene
     private fun getData() {
         when(searchType) {
             0 -> {
-                if(sourceData.isNullOrEmpty()) viewModel.sources()
+                if(sourceData.isEmpty()) viewModel.sources()
                 else searchSources()
             }
             1 -> viewModel.article("${binding.search.text}")
@@ -279,7 +279,7 @@ class DialogSearch : BottomSheetDialogFragment(), ArticleListener, SourceListene
     }
 
     private fun searchSources() = lifecycleScope.launch(Dispatchers.Default) {
-        if(!sourceData.isNullOrEmpty()) {
+        if(sourceData.isNotEmpty()) {
             val temp: ArrayList<SourceEntity> = ArrayList()
             sourceData.forEach { d ->
                 if (d.name?.lowercase(Locale.getDefault())?.contains("${binding.search.text}".lowercase(Locale.getDefault())) == true)
@@ -287,7 +287,7 @@ class DialogSearch : BottomSheetDialogFragment(), ArticleListener, SourceListene
             }
 
             launch(Dispatchers.Main) {
-                if(temp.isNullOrEmpty()) {
+                if(temp.isEmpty()) {
                     dialog?.window?.decorView?.let {
                         context?.snackBarWarning(
                             layoutInflater = layoutInflater, v = it,
