@@ -4,9 +4,10 @@
 - 100% [Kotlin](https://kotlinlang.org/) 
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) + [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/)
 - Architecture
-  - MVVM Architecture (Model - View - ViewModel - Model)
+  - MVVM Architecture (Model View ViewModel)
   - Repository Pattern
   - [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - Dependency Injection
+  - SSOT
 - JetPack
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Notify domain layer data to views
   - [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - Dispose observing data when lifecycle state changes
